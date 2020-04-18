@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage  xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms" 
+                     xmlns="http://xamarin.com/schemas/2014/forms"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     mc:Ignorable="d"
+                     x:Class="WebCamera.Client.UI.Pages.AppStartPage"
+                     xmlns:viewModels="clr-namespace:WebCamera.Client.Core.ViewModels;assembly=WebCamera.Client.Core"
+                     x:TypeArguments="viewModels:AppStartPageViewModel">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="{Binding Image}" 
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"/>
+            <Button Text="{Binding IsRunning, Converter={x:StaticResource StartStopConvertor}}"
+                    Command="{Binding StartStopCommand}"
+                    VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</mvx:MvxContentPage>
